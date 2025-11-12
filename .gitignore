@@ -1,0 +1,36 @@
+# Ambiente virtual Python
+venv/
+env/
+ENV/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Banco de dados SQLite
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Variáveis de ambiente
+.env
+.env.local
+
+# Flask
+instance/
+.webassets-cache
