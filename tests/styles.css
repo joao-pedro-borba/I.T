@@ -16,9 +16,21 @@ table {
 
 .treino {
     
-
 }
 
 .Negrito {
     font-weight: bold;
+}
+
+tr {    
+    border: 2px solid black;
+}
+
+td{
+    position: relative;
+    border: 2px solid black;
+    text-align: center;
+}
+table{
+    border: 2px solid black;
 }
