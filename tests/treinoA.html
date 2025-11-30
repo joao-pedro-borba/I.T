@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="styles.css">
+<div>
+    <table>
+        <td colspan="4">Treino A – Peito + Tríceps</td>
+        <tr style="background-color: aquamarine;">
+            <td>Exercício</td>
+            <td>Séries</td>
+            <td>Repetições</td>
+            <td>Descanso</td>
+        </tr>
+        <tr>
+            <td>Supino reto</td>
+            <td>4</td>
+            <td>10</td>
+            <td>1.5 min</td>
+        </tr>
+        <tr>
+            <td>Crucifixo inclinado</td>
+            <td>3</td>
+            <td>12</td>
+            <td>1 min</td>
+        </tr>
+        <tr>
+            <td>Peck deck</td>
+            <td>3</td>
+            <td>12–15</td>
+            <td>1 min</td>
+        </tr>
+        <tr>
+            <td>Tríceps pulley</td>
+            <td>4</td>
+            <td>10–12</td>
+            <td>1 min</td>
+        </tr>
+        <tr>
+            <td>Tríceps testa</td>
+            <td>3</td>
+            <td>12</td>
+            <td>1.5 min</td>
+        </tr>
+    </table>
+</div>
+
+<button onclick="concluir()">Concluir Treino</button>
+
+<script>
+function concluir() {
+    localStorage.setItem("treinoAtual", 2); // vai para B
+    window.location.href = "index.html";
+}
+</script>

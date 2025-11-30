@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="styles.css">
+<div>
+    <table>
+        <td colspan="4">Treino C – Pernas + Ombro</td>
+        <tr style="background-color: aquamarine;">
+            <td>Exercício</td>
+            <td>Séries</td>
+            <td>Repetições</td>
+            <td>Descanso</td>
+        </tr>
+        <tr>
+            <td>Agachamento livre</td>
+            <td>4</td>
+            <td>8–10</td>
+            <td>2 min</td>
+        </tr>
+        <tr>
+            <td>Leg press</td>
+            <td>4</td>
+            <td>12</td>
+            <td>1.5 min</td>
+        </tr>
+        <tr>
+            <td>Mesa flexora</td>
+            <td>3</td>
+            <td>12–15</td>
+            <td>1 min</td>
+        </tr>
+        <tr>
+            <td>Desenvolvimento com halteres</td>
+            <td>3</td>
+            <td>10</td>
+            <td>1.5 min</td>
+        </tr>
+        <tr>
+            <td>Elevação lateral</td>
+            <td>3</td>
+            <td>12–15</td>
+            <td>1 min</td>
+        </tr>
+    </table>
+</div>
+
+<button onclick="concluir()">Concluir Treino</button>
+
+<script>
+function concluir() {
+    localStorage.setItem("treinoAtual", 1); // volta para o A
+    window.location.href = "index.html";
+}
+</script>

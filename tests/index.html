@@ -7,173 +7,81 @@
     <link rel="stylesheet" href="styles.css">
     
     <title>I.T - Intelligent Training</title>
+
+    <style>
+        .box {
+            width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f3f3f3;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+            font-family: Arial;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
+
+
 <body>
-    <h1>João</h1>
-     <div>
-        <table>
-            <td colspan="4">Treino A – Peito + Tríceps</td>
-            <tr style="background-color: aquamarine;">
-                <td>Exercício</td>
-                <td>Séries</td>
-                <td>Repetições</td>
-                <td>Descanso</td>
-            </tr>
-            <tr>
-                <td>Supino reto</td>
-                <td>4</td>
-                <td>10</td>
-                <td>1.5 min</td>
-            </tr>
-            <tr>
-                <td>Crucifixo inclinado</td>
-                <td>3</td>
-                <td>12</td>
-                <td>1 min</td>
-            </tr>
-            <tr>
-                <td>Peck deck</td>
-                <td>3</td>
-                <td>12–15</td>
-                <td>1 min</td>
-            </tr>
-            <tr>
-                <td>Tríceps pulley</td>
-                <td>4</td>
-                <td>10–12</td>
-                <td>1 min</td>
-            </tr>
-            <tr>
-                <td>Tríceps testa</td>
-                <td>3</td>
-                <td>12</td>
-                <td>1.5 min</td>
-            </tr>
-        </table>
-    </div>
 
-    <br>
+<h1 class="titulo">João</h1>
+    
+<div class="box" id="treinoBox">
+    <!-- A tabela do treino será colocada aqui via JS -->
+</div>
 
-    <!-- ===== TREINO B ===== -->
-    <div>
-        <table>
-            <td colspan="4">Treino B – Costas + Bíceps</td>
-            <tr style="background-color: aquamarine;">
-                <td>Exercício</td>
-                <td>Séries</td>
-                <td>Repetições</td>
-                <td>Descanso</td>
-            </tr>
-            <tr>
-                <td>Puxada aberta</td>
-                <td>4</td>
-                <td>10–12</td>
-                <td>1.5 min</td>
-            </tr>
-            <tr>
-                <td>Remada baixa</td>
-                <td>3</td>
-                <td>10</td>
-                <td>1.5 min</td>
-            </tr>
-            <tr>
-                <td>Remada unilateral</td>
-                <td>3</td>
-                <td>12 cada lado</td>
-                <td>1 min</td>
-            </tr>
-            <tr>
-                <td>Rosca direta</td>
-                <td>4</td>
-                <td>10–12</td>
-                <td>1 min</td>
-            </tr>
-            <tr>
-                <td>Rosca alternada</td>
-                <td>3</td>
-                <td>12</td>
-                <td>1 min</td>
-            </tr>
-        </table>
-    </div>
+<center>
+    <button onclick="irParaTreino()">Ir para o treino</button>
+</center>
 
-    <br>
+<script>
+    let treinoAtual = localStorage.getItem("treinoAtual");
 
-    <!-- ===== TREINO C ===== -->
-    <div>
-        <table>
-            <td colspan="4">Treino C – Pernas + Ombro</td>
-            <tr style="background-color: aquamarine;">
-                <td>Exercício</td>
-                <td>Séries</td>
-                <td>Repetições</td>
-                <td>Descanso</td>
-            </tr>
-            <tr>
-                <td>Agachamento livre</td>
-                <td>4</td>
-                <td>8–10</td>
-                <td>2 min</td>
-            </tr>
-            <tr>
-                <td>Leg press</td>
-                <td>4</td>
-                <td>12</td>
-                <td>1.5 min</td>
-            </tr>
-            <tr>
-                <td>Mesa flexora</td>
-                <td>3</td>
-                <td>12–15</td>
-                <td>1 min</td>
-            </tr>
-            <tr>
-                <td>Desenvolvimento com halteres</td>
-                <td>3</td>
-                <td>10</td>
-                <td>1.5 min</td>
-            </tr>
-            <tr>
-                <td>Elevação lateral</td>
-                <td>3</td>
-                <td>12–15</td>
-                <td>1 min</td>
-            </tr>
-        </table>
-    </div>
-    <!-- <div>
-        <table>
-            <td colspan="4">Treino A</td>
-            <tr style="background-color: aquamarine;">
-                
-                <td>Maquina</td>
-                <td>Series</td>
-                <td>Repetições</td>
-                <td>Descanso</td>
-            </tr>
-            <tr>
-                
-                <td>Crucifixo</td>
-                <td>5</td>
-                <td>12</td>
-                <td>1 min</td>
-            </tr>
-            <tr>
-                
-                <td>Supino</td>
-                <td>3</td>
-                <td>12</td>
-                <td>1.5 min</td>
-            </tr>
-            <tr>
-                
-                <td>Double press</td>
-                <td>3</td>
-                <td>12</td>
-                <td>2 min</td>
-            </tr>
-        </table>
-    </div> -->
+    if (!treinoAtual) {
+        treinoAtual = 1;
+        localStorage.setItem("treinoAtual", 1);
+    }
+
+    // ----------- MOSTRA A FICHA DO TREINO -----------
+    function carregarTreino() {
+        const box = document.getElementById("treinoBox");
+
+        if (treinoAtual == 1) {
+            box.innerHTML = `<h2>Treino A – Peito + Tríceps</h2>
+            <p>Aqui entra sua tabela do Treino A</p>`;
+        }
+        else if (treinoAtual == 2) {
+            box.innerHTML = `<h2>Treino B – Costas + Bíceps</h2>
+            <p>Aqui entra sua tabela do Treino B</p>`;
+        }
+        else if (treinoAtual == 3) {
+            box.innerHTML = `<h2>Treino C – Pernas + Ombro</h2>
+            <p>Aqui entra sua tabela do Treino C</p>`;
+        }
+    }
+
+    carregarTreino();
+
+    // ---------- BOTÃO "IR PARA O TREINO" ---------
+    function irParaTreino() {
+        if (treinoAtual == 1) {
+            window.location.href = "treinoA.html";
+        } else if (treinoAtual == 2) {
+            window.location.href = "treinoB.html";
+        } else if (treinoAtual == 3) {
+            window.location.href = "treinoC.html";
+        }
+    }
+</script>
+
+
 
 
     <br>
