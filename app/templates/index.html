@@ -5,51 +5,69 @@
 {% block content %}
 <div class="container">
     <div class="hero-section">
-        <h1 class="hero-title">Bem-vindo ao I.T!</h1>
+        <h1 class="hero-title">
+            Bem-vindo ao <br />
+            I.T - Intelligent Training!
+        </h1>
         
-        <p class="hero-subtitle">Você está autenticado no sistema</p>
+        <!-- <p class="hero-subtitle">Você está autenticado no sistema</p> -->
     </div>
 
+    <section class="card">
+        <!-- <img src="https://placehold.co/400" alt=""> -->
+        <p style="font-weight: 400; font-size: large;">
+            <span style="font-size: x-large;">📌</span>
+            O <b>I.T - Intelligent Training</b> é um sistema desenvolvido para facilitar e aprimorar a experiência
+            dos usuários durante seus treinos em academias conveniadas, oferecendo <b>fichas de treino
+            personalizadas</b>, <b>vídeos demonstrativos</b> e o uso de <b>inteligência artificial</b> para recomendar
+            exercícios e hábitos adequados aos objetivos e à evolução de cada pessoa. Além disso, a
+            plataforma será uma ferramenta de apoio para instrutores e personal trainers, permitindo
+            acompanhar o desempenho dos alunos, ajustar treinos e otimizar rotinas de forma prática e
+            integrada, contribuindo para a execução correta dos exercícios, prevenção de lesões e
+            aumento da motivação.
+        </p>
+    </section>
+    
     <div class="cards-grid">
         <div class="card">
-            <div class="card-icon">📊</div>
-            <h3 class="card-title">Dashboard</h3>
-            <p class="card-text">Visualize suas estatísticas e relatórios</p>
-            <a href="{{ url_for('main.dashboard') }}" class="btn btn-secondary">Acessar</a>
+            <!-- <div class="card-icon">📊</div> -->
+            <img class="card-image" src="https://placehold.co/150" alt="">
+            <h3 class="card-title">Fichas de Treinos Personalizadas</h3>
+            <p class="card-text">Fichas de treinos personalizadas, com vídeos demonstrativos para execução dos exercícios e IA que auxiliaria no progresso.</p>
+            <!-- <a href="{{ url_for('main.dashboard') }}" class="btn btn-secondary">Saber Mais</a> -->
+            <a href="https://api.whatsapp.com/send?phone=+5551993732064&text=Olá,%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Intelligent%20Training." target="_blank" class="btn btn-secondary">Saber Mais</a>
         </div>
 
         <div class="card">
-            <div class="card-icon">👤</div>
-            <h3 class="card-title">Perfil</h3>
-            <p class="card-text">Gerencie suas informações pessoais</p>
-            <a href="#" class="btn btn-secondary">Em breve</a>
+            <img class="card-image" src="https://placehold.co/150" alt="">
+            <!-- <div class="card-icon">👤</div> -->
+            <h3 class="card-title">Vídeos Demonstrativos dos Exercícios</h3>
+            <p class="card-text">Vídeos demonstrativos para auxiliar nos exercícios, para evitar lesões e melhorar a execução.</p>
+            <a href="https://api.whatsapp.com/send?phone=+5551993732064&text=Olá,%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Intelligent%20Training." target="_blank" class="btn btn-secondary">Saber Mais</a>
         </div>
 
         <div class="card">
-            <div class="card-icon">⚙️</div>
-            <h3 class="card-title">Configurações</h3>
-            <p class="card-text">Ajuste as preferências do sistema</p>
-            <a href="#" class="btn btn-secondary">Em breve</a>
+            <img class="card-image" src="https://placehold.co/150" alt="">
+            <!-- <div class="card-icon">⚙️</div> -->
+            <h3 class="card-title">Inteligência Artificial Auxiliar</h3>
+            <p class="card-text">O uso da inteligência artificial irá auxiliar, sugerir exercícios, recomendar ajustes de treino baseados no histórico e alertar sobre sobrecarga de peso.</p>
+            <a href="https://api.whatsapp.com/send?phone=+5551993732064&text=Olá,%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Intelligent%20Training." target="_blank" class="btn btn-secondary">Saber Mais</a>
         </div>
     </div>
 
-    <div class="info-section">
-        <h2>Informações da Conta</h2>
-        <div class="info-grid">
-            <div class="info-item">
-                <strong>Usuário:</strong> ...
-            </div>
-            <div class="info-item">
-                <strong>Email:</strong> ...
-            </div>
-            <div class="info-item">
-                <strong>Conta criada em:</strong> ...
-            </div>
-            <div class="info-item">
-                <strong>Status:</strong> 
-                <span class="badge badge-success">...</span>
-            </div>
+    <div class="card feedbacks">
+        <h1>💬 O que os usuários estão dizendo:</h1>
+        <div class="testimonials">
+            <blockquote>"O I.T tem me ajudado a melhorar minha performance de forma significativa!" - João Silva</blockquote>
+            <blockquote>"Adoro os vídeos demonstrativos, são super úteis!" - Maria Oliveira</blockquote>
+            <blockquote>"A inteligência artificial é fantástica! Me ajuda a ajustar meus treinos com base nos meus resultados." - Carlos Pereira</blockquote>
         </div>
     </div>
+
+    <div class="card usuarios-ativos">
+        <h1>👤 Usuários ativos: <br /> 1.000,000</h1>
+    </div>
+</div>
+
 </div>
 {% endblock %}
