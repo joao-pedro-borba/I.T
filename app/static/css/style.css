@@ -589,9 +589,7 @@ html, body {
 /* Responsive */
 @media (max-width: 768px) {
     .navbar .container {
-        flex-direction: column;
-        /* gap: 1rem; */
-        margin-bottom: 1rem;
+        padding: 0 2rem;
     }
 
     .navbar-menu {
