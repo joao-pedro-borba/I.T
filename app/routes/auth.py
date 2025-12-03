@@ -5,6 +5,7 @@ from flask_login import login_user, logout_user, login_required
 # Importar o modelo de usuário e a instância do banco de dados
 from app.models.user import User
 from app import db
+import re
 
 # Criar um Blueprint para rotas de autenticação
 # Blueprint permite organizar rotas relacionadas em módulos separados
@@ -36,9 +37,13 @@ def login():
             flash('Por favor, preencha todos os campos.', 'warning')
             return render_template('login.html')
         
-        # Buscar usuário no banco de dados pelo nome de usuário
-        # .first() retorna o primeiro resultado ou None
-        user = User.query.filter_by(username=username).first()
+        regexEmail = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$' # Regex que valida se a informação é um e-mail
+        
+        # Buscar usuário no banco de dados pelo nome de usuário ou pelo Email
+        if re.match(regexEmail, username):
+            user = User.query.filter_by(email=username).first() # .first() retorna o primeiro resultado ou None
+        else:
+            user = User.query.filter_by(username=username).first() # .first() retorna o primeiro resultado ou None
         
         # Verificar se usuário existe e senha está correta
         if user and user.check_password(password):
